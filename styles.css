@@ -1,0 +1,225 @@
+/* Color Palette & Custom Properties */
+:root {
+    --text-primary: #1e293b;     /* Soft slate black */
+    --text-muted: #64748b;       /* Muted gray-blue for secondary details */
+    --bg-body: #f8fafc;          /* Cool white/gray canvas background */
+    --bg-card: #ffffff;          /* Crisp white page container */
+    --accent: #2563eb;           /* Deep professional blue */
+    --border: #e2e8f0;           /* Soft boundary lines */
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Global Document Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    line-height: 1.6;
+    padding: 3rem 1.5rem;
+    display: grid;
+    place-items: center;
+}
+
+/* Single column page card container */
+.resume-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--bg-card);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+}
+
+address {
+    font-style: normal;
+}
+
+address p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Section Layouts */
+section {
+    margin-bottom: 2.5rem;
+}
+
+section:last-of-type {
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+#summary p {
+    font-size: 1.05rem;
+    color: #334155;
+}
+
+/* Technical Skills Grid (2 Column Semantic List) */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.skills-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* If there are 3 items, make the last spans both columns */
+.skills-grid div:last-child {
+    grid-column: span 2;
+}
+
+.skills-grid dt {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.skills-grid dd {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* Experiences & Projects Block */
+.timeline-entry {
+    margin-bottom: 2rem;
+}
+
+.timeline-entry:last-child {
+    margin-bottom: 0;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+}
+
+.entry-title-block h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.organization {
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.1rem;
+}
+
+.date-range, time {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* Bullets */
+.entry-bullets {
+    padding-left: 1.25rem;
+}
+
+.entry-bullets li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+.entry-bullets li:last-child {
+    margin-bottom: 0;
+}
+
+/* Coursework Definition Lists */
+.education-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.education-details dt {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.education-details dd {
+    color: var(--text-muted);
+}
+
+/* Responsive Styles for Tablet and Mobile */
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+
+    .resume-container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .entry-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .skills-grid div:last-child {
+        grid-column: span 1;
+    }
+}
